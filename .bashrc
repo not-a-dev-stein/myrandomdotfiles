@@ -23,7 +23,7 @@ bind "set completion-ignore-case on"
 [[ $- != *i* ]] && return
 
 # Prompt do terminal
-PS1='[\u@\h em \e[0;32m\W\e[0m]\$ '
+PS1='[\u@\h em \e[0;34m\W\e[0m]\$ '
 
 # Aliases úteis
 alias ..='cd ..'
@@ -37,7 +37,9 @@ alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias ls='ls -a --color=auto --group-directories-first'
 # ---------------------------
-alias clean='paru -Sc && sudo pacman -Rns $(pacman -Qtdq)'
-alias grubup='grub-mkconfig -o /boot/grub/grub.cfg'
+alias clean='paru -Sc && paru -c'
 # ---------------------------
 alias yt='youtube-dl -ic'
+
+# Rodar o pfetch
+pfetch
