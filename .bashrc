@@ -4,8 +4,13 @@
 
 # Remove entradas duplicadas no bash_history
 HISTCONTROL=ignoredups:erasedups
+HISTSIZE=10000
 shopt -s histappend
+shopt -s cmdhist
 PROMPT_COMMAND="history -n; history -w; history -c; history -r; $PROMPT_COMMAND"
+
+# Permite apertar a seta p/ cima para buscar comandos anteriores baseado no que foi digitado
+INPUTRC=~/.inputrc
 
 # Desabilitar a pausa do terminal (ctrl+S e ctrl+Q)
 stty -ixon
@@ -26,11 +31,11 @@ bind "set completion-ignore-case on"
 PS1='[\u@\h em \W]\$ '
 
 # Exports úteis
-
 export EDITOR="/usr/bin/micro"
 export VISUAL="/usr/bin/micro"
 
 # Aliases úteis
+alias rm="rm -i"
 alias ..='cd ..'
 alias ...='cd ...'
 alias .3='cd ../../..'
