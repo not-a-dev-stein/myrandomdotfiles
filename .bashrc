@@ -23,7 +23,12 @@ bind "set completion-ignore-case on"
 [[ $- != *i* ]] && return
 
 # Prompt do terminal
-PS1='[\u@\h em \e[0;34m\W\e[0m]\$ '
+PS1='[\u@\h em \W]\$ '
+
+# Exports úteis
+
+export EDITOR="/usr/bin/micro"
+export VISUAL="/usr/bin/micro"
 
 # Aliases úteis
 alias ..='cd ..'
@@ -31,15 +36,18 @@ alias ...='cd ...'
 alias .3='cd ../../..'
 alias .4='cd ../../../..'
 alias .5='cd ../../../../..'
-alias mkd='mkdir -pv'
+alias mkdir='mkdir -pv'
 alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias ls='ls -a --color=auto --group-directories-first'
 # ---------------------------
-alias clean='paru -Sc && paru -c'
+alias upd='paru -Syu && flatpak update'
+alias gdm-config='machinectl shell gdm@ /bin/bash'
+alias clean='paru -Sc && paru -c && flatpak uninstall --unused'
+alias mkp='makepkg -si PKGBUILD'
 # ---------------------------
 alias yt='youtube-dl -ic'
 
-# Rodar o pfetch
-pfetch
+# Rodar a ferramenta de fetch do sistema
+macchina
