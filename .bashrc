@@ -33,6 +33,7 @@ PS1='[\u@\h em \W]\$ '
 # Exports úteis
 export EDITOR="/usr/bin/micro"
 export VISUAL="/usr/bin/micro"
+export QT_QPA_PLATFORMTHEME="gnome"
 
 # Aliases úteis
 alias rm="rm -i"
@@ -53,6 +54,7 @@ alias clean='paru -Sc && paru -c && flatpak uninstall --unused'
 alias mkp='makepkg -si PKGBUILD'
 # ---------------------------
 alias yt='youtube-dl -ic'
+alias pipefix='amixer -c0 sset "Front" 87 && amixer -c0 sset "Bass Speaker" 87'
 
 # Rodar a ferramenta de fetch do sistema
 macchina
